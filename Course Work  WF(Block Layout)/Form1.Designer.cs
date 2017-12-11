@@ -28,156 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.enterNumOfElemInBlocks = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.main_container = new System.Windows.Forms.SplitContainer();
+            this.btn_start_algorithm = new System.Windows.Forms.Button();
+            this.btn_aplly_changes = new System.Windows.Forms.Button();
+            this.text_block_num_of_elem_in_blocks = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.enterNumOfBlocks = new System.Windows.Forms.TextBox();
+            this.text_block_num_of_blocks = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.enterNumOfElem = new System.Windows.Forms.TextBox();
+            this.text_block_num_of_elem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.apllyChanges = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.result_panel = new System.Windows.Forms.Panel();
+            this.adj_matrix_data_grid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.main_container)).BeginInit();
+            this.main_container.Panel1.SuspendLayout();
+            this.main_container.Panel2.SuspendLayout();
+            this.main_container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adj_matrix_data_grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // main_container
             // 
-            this.splitContainer1.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.main_container.BackColor = System.Drawing.Color.White;
+            this.main_container.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.main_container, "main_container");
+            this.main_container.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.main_container.Name = "main_container";
             // 
-            // splitContainer1.Panel1
+            // main_container.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.apllyChanges);
-            this.splitContainer1.Panel1.Controls.Add(this.enterNumOfElemInBlocks);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.enterNumOfBlocks);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.enterNumOfElem);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.main_container.Panel1.BackColor = System.Drawing.Color.White;
+            this.main_container.Panel1.Controls.Add(this.btn_start_algorithm);
+            this.main_container.Panel1.Controls.Add(this.btn_aplly_changes);
+            this.main_container.Panel1.Controls.Add(this.text_block_num_of_elem_in_blocks);
+            this.main_container.Panel1.Controls.Add(this.label3);
+            this.main_container.Panel1.Controls.Add(this.text_block_num_of_blocks);
+            this.main_container.Panel1.Controls.Add(this.label2);
+            this.main_container.Panel1.Controls.Add(this.text_block_num_of_elem);
+            this.main_container.Panel1.Controls.Add(this.label1);
+            this.main_container.Panel1.Cursor = System.Windows.Forms.Cursors.Default;
             // 
-            // splitContainer1.Panel2
+            // main_container.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 561);
-            this.splitContainer1.SplitterDistance = 261;
-            this.splitContainer1.TabIndex = 0;
-            this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            this.main_container.Panel2.Controls.Add(this.result_panel);
+            this.main_container.Panel2.Controls.Add(this.adj_matrix_data_grid);
             // 
-            // enterNumOfElemInBlocks
+            // btn_start_algorithm
             // 
-            this.enterNumOfElemInBlocks.Location = new System.Drawing.Point(24, 151);
-            this.enterNumOfElemInBlocks.Name = "enterNumOfElemInBlocks";
-            this.enterNumOfElemInBlocks.Size = new System.Drawing.Size(57, 20);
-            this.enterNumOfElemInBlocks.TabIndex = 4;
+            resources.ApplyResources(this.btn_start_algorithm, "btn_start_algorithm");
+            this.btn_start_algorithm.Name = "btn_start_algorithm";
+            this.btn_start_algorithm.UseVisualStyleBackColor = true;
+            // 
+            // btn_aplly_changes
+            // 
+            resources.ApplyResources(this.btn_aplly_changes, "btn_aplly_changes");
+            this.btn_aplly_changes.Name = "btn_aplly_changes";
+            this.btn_aplly_changes.UseVisualStyleBackColor = true;
+            this.btn_aplly_changes.Click += new System.EventHandler(this.btn_apply_chages_Click);
+            // 
+            // text_block_num_of_elem_in_blocks
+            // 
+            resources.ApplyResources(this.text_block_num_of_elem_in_blocks, "text_block_num_of_elem_in_blocks");
+            this.text_block_num_of_elem_in_blocks.Name = "text_block_num_of_elem_in_blocks";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(20, 110);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 38);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Введите количество элементов\r\nв каждом блок";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // enterNumOfBlocks
+            // text_block_num_of_blocks
             // 
-            this.enterNumOfBlocks.Location = new System.Drawing.Point(24, 87);
-            this.enterNumOfBlocks.Name = "enterNumOfBlocks";
-            this.enterNumOfBlocks.Size = new System.Drawing.Size(57, 20);
-            this.enterNumOfBlocks.TabIndex = 3;
+            resources.ApplyResources(this.text_block_num_of_blocks, "text_block_num_of_blocks");
+            this.text_block_num_of_blocks.Name = "text_block_num_of_blocks";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(20, 65);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Введите количество блоков";
             // 
-            // enterNumOfElem
+            // text_block_num_of_elem
             // 
-            this.enterNumOfElem.Location = new System.Drawing.Point(24, 42);
-            this.enterNumOfElem.Name = "enterNumOfElem";
-            this.enterNumOfElem.Size = new System.Drawing.Size(57, 20);
-            this.enterNumOfElem.TabIndex = 1;
-            this.enterNumOfElem.TextChanged += new System.EventHandler(this.enterNumOfElem_TextChanged);
+            resources.ApplyResources(this.text_block_num_of_elem, "text_block_num_of_elem");
+            this.text_block_num_of_elem.Name = "text_block_num_of_elem";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(20, 20);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Введите количество элементов";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
+            // result_panel
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(489, 537);
-            this.dataGridView1.TabIndex = 0;
+            resources.ApplyResources(this.result_panel, "result_panel");
+            this.result_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.result_panel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.result_panel.Name = "result_panel";
             // 
-            // apllyChanges
+            // adj_matrix_data_grid
             // 
-            this.apllyChanges.Location = new System.Drawing.Point(45, 200);
-            this.apllyChanges.Name = "apllyChanges";
-            this.apllyChanges.Size = new System.Drawing.Size(170, 40);
-            this.apllyChanges.TabIndex = 5;
-            this.apllyChanges.Text = "Принять";
-            this.apllyChanges.UseVisualStyleBackColor = true;
-            this.apllyChanges.Click += new System.EventHandler(this.apllyChanges_Click);
+            resources.ApplyResources(this.adj_matrix_data_grid, "adj_matrix_data_grid");
+            this.adj_matrix_data_grid.BackgroundColor = System.Drawing.Color.White;
+            this.adj_matrix_data_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adj_matrix_data_grid.Cursor = System.Windows.Forms.Cursors.Default;
+            this.adj_matrix_data_grid.Name = "adj_matrix_data_grid";
+            this.adj_matrix_data_grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellEndEdit);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.main_container);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.main_container.Panel1.ResumeLayout(false);
+            this.main_container.Panel1.PerformLayout();
+            this.main_container.Panel2.ResumeLayout(false);
+            this.main_container.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.main_container)).EndInit();
+            this.main_container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adj_matrix_data_grid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer main_container;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox enterNumOfElem;
-        private System.Windows.Forms.TextBox enterNumOfBlocks;
+        private System.Windows.Forms.TextBox text_block_num_of_elem;
+        private System.Windows.Forms.TextBox text_block_num_of_blocks;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox enterNumOfElemInBlocks;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button apllyChanges;
+        private System.Windows.Forms.TextBox text_block_num_of_elem_in_blocks;
+        private System.Windows.Forms.DataGridView adj_matrix_data_grid;
+        private System.Windows.Forms.Button btn_aplly_changes;
+        private System.Windows.Forms.Panel result_panel;
+        private System.Windows.Forms.Button btn_start_algorithm;
     }
 }
 
