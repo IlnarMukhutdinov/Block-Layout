@@ -190,7 +190,7 @@
     <value>16, 143</value>
   </data>
   <data name="text_block_num_of_elem_in_blocks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
+    <value>35, 20</value>
   </data>
   <data name="text_block_num_of_elem_in_blocks.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -245,7 +245,7 @@
     <value>16, 79</value>
   </data>
   <data name="text_block_num_of_blocks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
+    <value>35, 20</value>
   </data>
   <data name="text_block_num_of_blocks.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -296,7 +296,7 @@
     <value>16, 34</value>
   </data>
   <data name="text_block_num_of_elem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
+    <value>35, 20</value>
   </data>
   <data name="text_block_num_of_elem.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

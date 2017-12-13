@@ -78,6 +78,7 @@
             resources.ApplyResources(this.btn_start_algorithm, "btn_start_algorithm");
             this.btn_start_algorithm.Name = "btn_start_algorithm";
             this.btn_start_algorithm.UseVisualStyleBackColor = true;
+            this.btn_start_algorithm.Click += new System.EventHandler(this.btn_start_algorithm_Click);
             // 
             // btn_aplly_changes
             // 
