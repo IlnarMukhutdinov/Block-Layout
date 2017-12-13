@@ -1,10 +1,28 @@
-﻿using System;
-using Graph_placement_algorithm;
-
+﻿using Graph_placement_algorithm;
 namespace Course_Work__WF_Block_Layout_
 {
+    class SwapResult
+    {
+        public bool Flag { get; set; }
+        public int I { get; set; }
+        public int J { get; set; }
+
+        public SwapResult(bool flag, int i, int j)
+        {
+            Flag = flag;
+            I = i;
+            J = j;
+        }
+
+        public SwapResult()
+        {
+            
+        }
+    }
     class Algorithm
     {
+
+
         public static int[] InnerLinkC1 { get; set; }
 
         public static int[] InnerLinkC2 { get; set; }
@@ -70,7 +88,7 @@ namespace Course_Work__WF_Block_Layout_
 
         }
 
-        public static bool SwapVertex()
+        public static SwapResult SwapVertex()
         {
             int count = 0, max = 0, isave = 0, jsave = 0;
 
@@ -101,7 +119,7 @@ namespace Course_Work__WF_Block_Layout_
                                     isave = i;
                                     jsave = j;
                                 }
-                                else if (Config_matrix.LocalDegree[i] + Config_matrix.LocalDegree[j + Config_matrix.M] == Config_matrix.LocalDegree[isave] + Config_matrix.LocalDegree[jsave+ Config_matrix.M])
+                                else if (Config_matrix.LocalDegree[i] + Config_matrix.LocalDegree[j + Config_matrix.M] == Config_matrix.LocalDegree[isave] + Config_matrix.LocalDegree[jsave + Config_matrix.M])
                                 {
                                     if (i < isave)
                                     {
@@ -134,13 +152,14 @@ namespace Course_Work__WF_Block_Layout_
                     Config_matrix.AdjMatrixC[k, jsave + Config_matrix.M] = savevalue;
                     k++;
                 }
-                /*string saveshape = cm.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M];
-                cm.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M] = cm.VertexShape[jsave + Config_matrix.M + Config_matrix.Piececount * Config_matrix.M];
-                cm.VertexShape[jsave + Config_matrix.M + Config_matrix.Piececount * Config_matrix.M] = saveshape;*/
 
-                return true;
+                string saveshape = Config_matrix.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M];
+                Config_matrix.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M] = Config_matrix.VertexShape[jsave + Config_matrix.M + Config_matrix.Piececount * Config_matrix.M];
+                Config_matrix.VertexShape[jsave + Config_matrix.M + Config_matrix.Piececount * Config_matrix.M] = saveshape;
+
+                return new SwapResult(true, isave, jsave);
             }
-            return false;
+            return new SwapResult(false, 0, 0);
         }
 
         public static void Solve()
@@ -154,23 +173,23 @@ namespace Course_Work__WF_Block_Layout_
                     ExternalLinksCount();
                     ConnectivityCount();
                     DeltaCount();
-                } while (SwapVertex());
-                
+                } while (SwapVertex().Flag);
+
                 int[,] savearr = new int[Config_matrix.N - Config_matrix.M, Config_matrix.N - Config_matrix.M];
                 for (int i = Config_matrix.M; i < Config_matrix.N; i++)
-                for (int j = Config_matrix.M; j < Config_matrix.N; j++)
-                {
-                    savearr[i - Config_matrix.M, j - Config_matrix.M] = Config_matrix.AdjMatrixC[i, j];
-                }
+                    for (int j = Config_matrix.M; j < Config_matrix.N; j++)
+                    {
+                        savearr[i - Config_matrix.M, j - Config_matrix.M] = Config_matrix.AdjMatrixC[i, j];
+                    }
 
                 Config_matrix.N -= Config_matrix.M;
                 Config_matrix.AdjMatrixC = new int[Config_matrix.N, Config_matrix.N];
 
                 for (int i = 0; i < Config_matrix.N; i++)
-                for (int j = 0; j < Config_matrix.N; j++)
-                {
-                    Config_matrix.AdjMatrixC[i, j] = savearr[i, j];
-                }
+                    for (int j = 0; j < Config_matrix.N; j++)
+                    {
+                        Config_matrix.AdjMatrixC[i, j] = savearr[i, j];
+                    }
             }
         }
     }

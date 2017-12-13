@@ -11,6 +11,7 @@ namespace Graph_placement_algorithm
     class Config_matrix
     {
         private static int[,] adjMatrixC1, adjMatrixC2;
+        
 
         public int index1 = 0, index2 = 0;
 
@@ -18,7 +19,7 @@ namespace Graph_placement_algorithm
 
         public static int[] LocalDegree { get; set; }
 
-        public string[] VertexShape { get; set; }
+        public static string[] VertexShape { get; set; }
 
         public static int L { get; set; }
 
@@ -31,6 +32,14 @@ namespace Graph_placement_algorithm
         public static void MatrixCreate()
         {
             AdjMatrixC = new int[N, N];
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    AdjMatrixC[i, j] = 0;
+                }
+            }
+            VertexShape = new[] { "x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9" };
         }
 
         public static void LocalDegreeCount()

@@ -131,7 +131,7 @@
             this.adj_matrix_data_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adj_matrix_data_grid.Cursor = System.Windows.Forms.Cursors.Default;
             this.adj_matrix_data_grid.Name = "adj_matrix_data_grid";
-            this.adj_matrix_data_grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellEndEdit);
+            this.adj_matrix_data_grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellValueChanged);
             // 
             // Form1
             // 
