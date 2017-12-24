@@ -3,9 +3,9 @@ namespace Course_Work__WF_Block_Layout_
 {
     class SwapResult
     {
-        public bool Flag { get; set; }
-        public int I { get; set; }
-        public int J { get; set; }
+        public static bool Flag { get; set; }
+        public static int I { get; set; }
+        public static int J { get; set; }
 
         public SwapResult(bool flag, int i, int j)
         {
@@ -13,16 +13,9 @@ namespace Course_Work__WF_Block_Layout_
             I = i;
             J = j;
         }
-
-        public SwapResult()
-        {
-            
-        }
     }
     class Algorithm
     {
-
-
         public static int[] InnerLinkC1 { get; set; }
 
         public static int[] InnerLinkC2 { get; set; }
@@ -173,7 +166,7 @@ namespace Course_Work__WF_Block_Layout_
                     ExternalLinksCount();
                     ConnectivityCount();
                     DeltaCount();
-                } while (SwapVertex().Flag);
+                } while (SwapResult.Flag);
 
                 int[,] savearr = new int[Config_matrix.N - Config_matrix.M, Config_matrix.N - Config_matrix.M];
                 for (int i = Config_matrix.M; i < Config_matrix.N; i++)

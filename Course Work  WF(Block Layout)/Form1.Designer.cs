@@ -39,14 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.text_block_num_of_elem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.result_panel = new System.Windows.Forms.Panel();
+            this.result_table = new System.Windows.Forms.DataGridView();
             this.adj_matrix_data_grid = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.main_container)).BeginInit();
             this.main_container.Panel1.SuspendLayout();
             this.main_container.Panel2.SuspendLayout();
             this.main_container.SuspendLayout();
-            this.result_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.result_table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adj_matrix_data_grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +73,7 @@
             // 
             // main_container.Panel2
             // 
-            this.main_container.Panel2.Controls.Add(this.result_panel);
+            this.main_container.Panel2.Controls.Add(this.result_table);
             this.main_container.Panel2.Controls.Add(this.adj_matrix_data_grid);
             resources.ApplyResources(this.main_container.Panel2, "main_container.Panel2");
             // 
@@ -129,13 +128,13 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // result_panel
+            // result_table
             // 
-            resources.ApplyResources(this.result_panel, "result_panel");
-            this.result_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.result_panel.Controls.Add(this.label4);
-            this.result_panel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.result_panel.Name = "result_panel";
+            resources.ApplyResources(this.result_table, "result_table");
+            this.result_table.BackgroundColor = System.Drawing.Color.White;
+            this.result_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.result_table.Name = "result_table";
+            this.result_table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.result_table_CellContentClick);
             // 
             // adj_matrix_data_grid
             // 
@@ -144,12 +143,7 @@
             this.adj_matrix_data_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adj_matrix_data_grid.Cursor = System.Windows.Forms.Cursors.Default;
             this.adj_matrix_data_grid.Name = "adj_matrix_data_grid";
-            this.adj_matrix_data_grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellValueChanged);
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            this.adj_matrix_data_grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellEndEdit);
             // 
             // Form1
             // 
@@ -161,11 +155,9 @@
             this.main_container.Panel1.ResumeLayout(false);
             this.main_container.Panel1.PerformLayout();
             this.main_container.Panel2.ResumeLayout(false);
-            this.main_container.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.main_container)).EndInit();
             this.main_container.ResumeLayout(false);
-            this.result_panel.ResumeLayout(false);
-            this.result_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.result_table)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adj_matrix_data_grid)).EndInit();
             this.ResumeLayout(false);
 
@@ -182,10 +174,9 @@
         private System.Windows.Forms.TextBox text_block_num_of_elem_in_blocks;
         private System.Windows.Forms.DataGridView adj_matrix_data_grid;
         private System.Windows.Forms.Button btn_aplly_changes;
-        private System.Windows.Forms.Panel result_panel;
         private System.Windows.Forms.Button btn_start_algorithm;
         private System.Windows.Forms.Button btn_simmetry;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView result_table;
     }
 }
 

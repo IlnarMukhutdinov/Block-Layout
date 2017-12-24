@@ -34,8 +34,9 @@ namespace Course_Work__WF_Block_Layout_
 
         private void create_data_grid()
         {
+            adj_matrix_data_grid.AllowUserToAddRows = false;
             adj_matrix_data_grid.ColumnCount = Config_matrix.N + 2;
-            adj_matrix_data_grid.RowCount = Config_matrix.N + 1;
+            adj_matrix_data_grid.RowCount = Config_matrix.N;
 
             for (int i = 0; i < adj_matrix_data_grid.Columns.Count - 2; i++)
             {
@@ -52,13 +53,27 @@ namespace Course_Work__WF_Block_Layout_
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].Name = "a";
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].Width = 40;
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].ReadOnly = true;
-            adj_matrix_data_grid.AllowUserToAddRows = false;
 
             for (int i = 0; i < Config_matrix.N; i++)
             {
                 adj_matrix_data_grid[i, i].ReadOnly = true;
                 adj_matrix_data_grid[i, i].Style.BackColor = Color.DarkGray;
             }
+            local_degree_show();
+        }
+
+        private void create_result_table()
+        {
+            result_table.Visible = true;
+            result_table.AllowUserToAddRows = false;
+            result_table.ColumnCount = 1;
+            result_table.RowCount = Config_matrix.L;
+
+            for (int i = 0; i < Config_matrix.L; i++)
+            {
+                result_table.Rows[i].HeaderCell.Value = "G" + (i + 1);
+            }
+            result_table.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
         }
 
         private void btn_apply_changes_Click(object sender, EventArgs e)
@@ -79,21 +94,31 @@ namespace Course_Work__WF_Block_Layout_
             adj_matrix_data_grid.AllowUserToAddRows = false;
             btn_start_algorithm.Enabled = true;
             btn_simmetry.Enabled = true;
+            create_result_table();
         }
 
         private void btn_start_algorithm_Click(object sender, EventArgs e)
         {
             adj_matrix_data_grid.Enabled = false;
             adj_matrix_data_grid.ForeColor = Color.Gray;
-            SwapResult sr = new SwapResult();
-            if (Config_matrix.Piececount >= Config_matrix.L - 1) return;
+            if (Config_matrix.Piececount >= Config_matrix.L - 1)
+            {
+                for (int i = 0; i < Config_matrix.M; i++)
+                {
+                    if (i != Config_matrix.M - 1)
+                        result_table[0, Config_matrix.Piececount].Value += Config_matrix.VertexShape[i + Config_matrix.M * Config_matrix.Piececount] + "; ";
+                    else
+                        result_table[0, Config_matrix.Piececount].Value += Config_matrix.VertexShape[i + Config_matrix.M * Config_matrix.Piececount];
+                }
+                btn_start_algorithm.Enabled = false;
+                return;
+            }
 
             Algorithm.InternalLinksCount();
             Algorithm.ExternalLinksCount();
             Algorithm.ConnectivityCount();
-
             Algorithm.DeltaCount();
-            sr = Algorithm.SwapVertex();
+            Algorithm.SwapVertex();
             for (int i = 0; i < Config_matrix.N; i++)
             {
                 for (int j = 0; j < Config_matrix.N; j++)
@@ -102,14 +127,14 @@ namespace Course_Work__WF_Block_Layout_
                 }
             }
 
-            string save = adj_matrix_data_grid.Columns[sr.I].Name;
-            adj_matrix_data_grid.Columns[sr.I].Name = adj_matrix_data_grid.Columns[sr.J].Name;
-            adj_matrix_data_grid.Columns[sr.J].Name = save;
+            string save = adj_matrix_data_grid.Columns[SwapResult.I].Name;
+            adj_matrix_data_grid.Columns[SwapResult.I].Name = adj_matrix_data_grid.Columns[SwapResult.J + Config_matrix.M].Name;
+            adj_matrix_data_grid.Columns[SwapResult.J + Config_matrix.M].Name = save;
 
-            adj_matrix_data_grid.Rows[sr.I].HeaderCell.Value = adj_matrix_data_grid.Rows[sr.J].HeaderCell.Value;
-            adj_matrix_data_grid.Rows[sr.J].HeaderCell.Value = save;
+            adj_matrix_data_grid.Rows[SwapResult.I].HeaderCell.Value = adj_matrix_data_grid.Rows[SwapResult.J + Config_matrix.M].HeaderCell.Value;
+            adj_matrix_data_grid.Rows[SwapResult.J + Config_matrix.M].HeaderCell.Value = save;
 
-            if (!sr.Flag)
+            if (!SwapResult.Flag)
             {
                 int[,] savearr = new int[Config_matrix.N - Config_matrix.M, Config_matrix.N - Config_matrix.M];
                 for (int i = Config_matrix.M; i < Config_matrix.N; i++)
@@ -126,6 +151,16 @@ namespace Course_Work__WF_Block_Layout_
                     {
                         Config_matrix.AdjMatrixC[i, j] = savearr[i, j];
                     }
+                
+                for (int i = 0; i < Config_matrix.M; i++)
+                {
+                    if (i != Config_matrix.M - 1)
+                        result_table[0, Config_matrix.Piececount].Value += Config_matrix.VertexShape[i + Config_matrix.M * Config_matrix.Piececount] + "; ";
+                    else
+                        result_table[0, Config_matrix.Piececount].Value += Config_matrix.VertexShape[i + Config_matrix.M * Config_matrix.Piececount];
+                }
+                
+
                 Config_matrix.Piececount++;
 
                 create_data_grid();
@@ -138,11 +173,38 @@ namespace Course_Work__WF_Block_Layout_
                 }
                 local_degree_show();
                 connectivity_show();
-            }
 
+                /*string ver = "";
+                if (Config_matrix.Piececount == 1)
+                {
+                    for (int i = 0; i < Config_matrix.M; i++)
+                    {
+                        if (i != 2)
+                            ver += Config_matrix.VertexShape[i] + "; ";
+                        else
+                            ver += Config_matrix.VertexShape[i];
+                    }
+                    label_g1.Text = "{" + ver + "}";
+                    label_g1.Visible = true;
+                }*/
+            }
         }
 
-        private void adj_matrix_data_grid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void btn_simmetry_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Config_matrix.N; i++)
+            {
+                for (int j = i + 1; j < Config_matrix.N; j++)
+                {
+                    Config_matrix.AdjMatrixC[j, i] = Config_matrix.AdjMatrixC[i, j];
+                    adj_matrix_data_grid[i, j].Value = adj_matrix_data_grid[j, i].Value;
+                }
+            }
+            local_degree_show();
+            connectivity_show();
+        }
+
+        private void adj_matrix_data_grid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -160,16 +222,9 @@ namespace Course_Work__WF_Block_Layout_
             connectivity_show();
         }
 
-        private void btn_simmetry_Click(object sender, EventArgs e)
+        private void result_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < Config_matrix.N; i++)
-            {
-                for (int j = i + 1; j < Config_matrix.N; j++)
-                {
-                    Config_matrix.AdjMatrixC[j, i] = Config_matrix.AdjMatrixC[i, j];
-                    adj_matrix_data_grid[i, j].Value = adj_matrix_data_grid[j, i].Value;
-                }
-            }
+
         }
     }
 }
