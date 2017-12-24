@@ -126,6 +126,36 @@
     <value>0, 0</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_simmetry.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_simmetry.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="btn_simmetry.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 290</value>
+  </data>
+  <data name="btn_simmetry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 50</value>
+  </data>
+  <data name="btn_simmetry.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btn_simmetry.Text" xml:space="preserve">
+    <value>Симметрично отобразить</value>
+  </data>
+  <data name="&gt;&gt;btn_simmetry.Name" xml:space="preserve">
+    <value>btn_simmetry</value>
+  </data>
+  <data name="&gt;&gt;btn_simmetry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_simmetry.Parent" xml:space="preserve">
+    <value>main_container.Panel1</value>
+  </data>
+  <data name="&gt;&gt;btn_simmetry.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btn_start_algorithm.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -154,7 +184,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;btn_start_algorithm.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btn_aplly_changes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -172,7 +202,7 @@
     <value>5</value>
   </data>
   <data name="btn_aplly_changes.Text" xml:space="preserve">
-    <value>Принять</value>
+    <value>Создать матрицу</value>
   </data>
   <data name="&gt;&gt;btn_aplly_changes.Name" xml:space="preserve">
     <value>btn_aplly_changes</value>
@@ -184,7 +214,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;btn_aplly_changes.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="text_block_num_of_elem_in_blocks.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 143</value>
@@ -205,7 +235,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;text_block_num_of_elem_in_blocks.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -239,7 +269,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="text_block_num_of_blocks.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 79</value>
@@ -260,7 +290,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;text_block_num_of_blocks.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -290,7 +320,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="text_block_num_of_elem.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 34</value>
@@ -311,7 +341,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;text_block_num_of_elem.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -341,7 +371,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;main_container.Panel1.Name" xml:space="preserve">
     <value>main_container.Panel1</value>
@@ -361,11 +391,38 @@
   <data name="result_panel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>result_panel</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="result_panel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 319</value>
+    <value>23, 324</value>
   </data>
   <data name="result_panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 230</value>
+    <value>504, 220</value>
   </data>
   <data name="result_panel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -386,13 +443,13 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="adj_matrix_data_grid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 12</value>
+    <value>23, 17</value>
   </data>
   <data name="adj_matrix_data_grid.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
   <data name="adj_matrix_data_grid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 300</value>
+    <value>504, 290</value>
   </data>
   <data name="adj_matrix_data_grid.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -409,6 +466,9 @@
   <data name="&gt;&gt;adj_matrix_data_grid.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="main_container.Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
   <data name="&gt;&gt;main_container.Panel2.Name" xml:space="preserve">
     <value>main_container.Panel2</value>
   </data>
@@ -422,10 +482,10 @@
     <value>1</value>
   </data>
   <data name="main_container.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 561</value>
+    <value>834, 561</value>
   </data>
   <data name="main_container.SplitterDistance" type="System.Int32, mscorlib">
-    <value>261</value>
+    <value>277</value>
   </data>
   <data name="main_container.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -449,7 +509,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 561</value>
+    <value>834, 561</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

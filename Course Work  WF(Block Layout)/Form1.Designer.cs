@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.main_container = new System.Windows.Forms.SplitContainer();
+            this.btn_simmetry = new System.Windows.Forms.Button();
             this.btn_start_algorithm = new System.Windows.Forms.Button();
             this.btn_aplly_changes = new System.Windows.Forms.Button();
             this.text_block_num_of_elem_in_blocks = new System.Windows.Forms.TextBox();
@@ -40,10 +41,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.result_panel = new System.Windows.Forms.Panel();
             this.adj_matrix_data_grid = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.main_container)).BeginInit();
             this.main_container.Panel1.SuspendLayout();
             this.main_container.Panel2.SuspendLayout();
             this.main_container.SuspendLayout();
+            this.result_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adj_matrix_data_grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +61,7 @@
             // main_container.Panel1
             // 
             this.main_container.Panel1.BackColor = System.Drawing.Color.White;
+            this.main_container.Panel1.Controls.Add(this.btn_simmetry);
             this.main_container.Panel1.Controls.Add(this.btn_start_algorithm);
             this.main_container.Panel1.Controls.Add(this.btn_aplly_changes);
             this.main_container.Panel1.Controls.Add(this.text_block_num_of_elem_in_blocks);
@@ -72,6 +76,14 @@
             // 
             this.main_container.Panel2.Controls.Add(this.result_panel);
             this.main_container.Panel2.Controls.Add(this.adj_matrix_data_grid);
+            resources.ApplyResources(this.main_container.Panel2, "main_container.Panel2");
+            // 
+            // btn_simmetry
+            // 
+            resources.ApplyResources(this.btn_simmetry, "btn_simmetry");
+            this.btn_simmetry.Name = "btn_simmetry";
+            this.btn_simmetry.UseVisualStyleBackColor = true;
+            this.btn_simmetry.Click += new System.EventHandler(this.btn_simmetry_Click);
             // 
             // btn_start_algorithm
             // 
@@ -85,7 +97,7 @@
             resources.ApplyResources(this.btn_aplly_changes, "btn_aplly_changes");
             this.btn_aplly_changes.Name = "btn_aplly_changes";
             this.btn_aplly_changes.UseVisualStyleBackColor = true;
-            this.btn_aplly_changes.Click += new System.EventHandler(this.btn_apply_chages_Click);
+            this.btn_aplly_changes.Click += new System.EventHandler(this.btn_apply_changes_Click);
             // 
             // text_block_num_of_elem_in_blocks
             // 
@@ -121,6 +133,7 @@
             // 
             resources.ApplyResources(this.result_panel, "result_panel");
             this.result_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.result_panel.Controls.Add(this.label4);
             this.result_panel.Cursor = System.Windows.Forms.Cursors.Default;
             this.result_panel.Name = "result_panel";
             // 
@@ -132,6 +145,11 @@
             this.adj_matrix_data_grid.Cursor = System.Windows.Forms.Cursors.Default;
             this.adj_matrix_data_grid.Name = "adj_matrix_data_grid";
             this.adj_matrix_data_grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellValueChanged);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // Form1
             // 
@@ -146,6 +164,8 @@
             this.main_container.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.main_container)).EndInit();
             this.main_container.ResumeLayout(false);
+            this.result_panel.ResumeLayout(false);
+            this.result_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adj_matrix_data_grid)).EndInit();
             this.ResumeLayout(false);
 
@@ -164,6 +184,8 @@
         private System.Windows.Forms.Button btn_aplly_changes;
         private System.Windows.Forms.Panel result_panel;
         private System.Windows.Forms.Button btn_start_algorithm;
+        private System.Windows.Forms.Button btn_simmetry;
+        private System.Windows.Forms.Label label4;
     }
 }
 

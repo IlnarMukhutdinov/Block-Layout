@@ -53,9 +53,15 @@ namespace Course_Work__WF_Block_Layout_
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].Width = 40;
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].ReadOnly = true;
             adj_matrix_data_grid.AllowUserToAddRows = false;
+
+            for (int i = 0; i < Config_matrix.N; i++)
+            {
+                adj_matrix_data_grid[i, i].ReadOnly = true;
+                adj_matrix_data_grid[i, i].Style.BackColor = Color.DarkGray;
+            }
         }
 
-        private void btn_apply_chages_Click(object sender, EventArgs e)
+        private void btn_apply_changes_Click(object sender, EventArgs e)
         {
             Config_matrix.N = int.Parse(text_block_num_of_elem.Text);
             Config_matrix.L = int.Parse(text_block_num_of_blocks.Text);
@@ -70,8 +76,9 @@ namespace Course_Work__WF_Block_Layout_
                     adj_matrix_data_grid[i, j].Value = 0;
                 }
             }
-            // adj_matrix_data_grid.AllowUserToAddRows = false;
+            adj_matrix_data_grid.AllowUserToAddRows = false;
             btn_start_algorithm.Enabled = true;
+            btn_simmetry.Enabled = true;
         }
 
         private void btn_start_algorithm_Click(object sender, EventArgs e)
@@ -150,8 +157,19 @@ namespace Course_Work__WF_Block_Layout_
                 Config_matrix.AdjMatrixC[adj_matrix_data_grid.CurrentCell.RowIndex,
                     adj_matrix_data_grid.CurrentCell.ColumnIndex] = int.Parse(adj_matrix_data_grid.CurrentCell.Value.ToString());
             }
-
             connectivity_show();
+        }
+
+        private void btn_simmetry_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Config_matrix.N; i++)
+            {
+                for (int j = i + 1; j < Config_matrix.N; j++)
+                {
+                    Config_matrix.AdjMatrixC[j, i] = Config_matrix.AdjMatrixC[i, j];
+                    adj_matrix_data_grid[i, j].Value = adj_matrix_data_grid[j, i].Value;
+                }
+            }
         }
     }
 }
