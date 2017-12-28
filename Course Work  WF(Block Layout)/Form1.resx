@@ -126,6 +126,36 @@
     <value>0, 0</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_open_result.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_open_result.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="btn_open_result.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 389</value>
+  </data>
+  <data name="btn_open_result.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 50</value>
+  </data>
+  <data name="btn_open_result.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btn_open_result.Text" xml:space="preserve">
+    <value>Показать результат</value>
+  </data>
+  <data name="&gt;&gt;btn_open_result.Name" xml:space="preserve">
+    <value>btn_open_result</value>
+  </data>
+  <data name="&gt;&gt;btn_open_result.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_open_result.Parent" xml:space="preserve">
+    <value>main_container.Panel1</value>
+  </data>
+  <data name="&gt;&gt;btn_open_result.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btn_simmetry.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -133,7 +163,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="btn_simmetry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 290</value>
+    <value>50, 226</value>
+  </data>
+  <data name="btn_simmetry.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>25, 25, 25, 25</value>
   </data>
   <data name="btn_simmetry.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 50</value>
@@ -154,7 +187,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;btn_simmetry.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btn_start_algorithm.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -163,7 +196,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="btn_start_algorithm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 230</value>
+    <value>50, 326</value>
+  </data>
+  <data name="btn_start_algorithm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>25, 25, 25, 25</value>
   </data>
   <data name="btn_start_algorithm.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 35</value>
@@ -184,7 +220,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;btn_start_algorithm.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btn_aplly_changes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -194,6 +230,9 @@
   </data>
   <data name="btn_aplly_changes.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 170</value>
+  </data>
+  <data name="btn_aplly_changes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>25, 25, 25, 25</value>
   </data>
   <data name="btn_aplly_changes.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 35</value>
@@ -214,7 +253,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;btn_aplly_changes.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="text_block_num_of_elem_in_blocks.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 143</value>
@@ -235,7 +274,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;text_block_num_of_elem_in_blocks.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -269,7 +308,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="text_block_num_of_blocks.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 79</value>
@@ -290,7 +329,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;text_block_num_of_blocks.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -320,7 +359,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="text_block_num_of_elem.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 34</value>
@@ -341,7 +380,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;text_block_num_of_elem.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -371,7 +410,7 @@
     <value>main_container.Panel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;main_container.Panel1.Name" xml:space="preserve">
     <value>main_container.Panel1</value>

@@ -82,6 +82,7 @@ namespace Course_Work__WF_Block_Layout_
             Config_matrix.L = int.Parse(text_block_num_of_blocks.Text);
             Config_matrix.M = int.Parse(text_block_num_of_elem_in_blocks.Text);
             Config_matrix.MatrixCreate();
+            Config_matrix.ResultMatrixCreate();
 
             create_data_grid();
             for (int i = 0; i < adj_matrix_data_grid.ColumnCount; i++)
@@ -111,6 +112,7 @@ namespace Course_Work__WF_Block_Layout_
                         result_table[0, Config_matrix.Piececount].Value += Config_matrix.VertexShape[i + Config_matrix.M * Config_matrix.Piececount];
                 }
                 btn_start_algorithm.Enabled = false;
+                btn_open_result.Enabled = true;
                 return;
             }
 
@@ -124,6 +126,9 @@ namespace Course_Work__WF_Block_Layout_
                 for (int j = 0; j < Config_matrix.N; j++)
                 {
                     adj_matrix_data_grid[j, i].Value = Config_matrix.AdjMatrixC[i, j];
+
+                    Config_matrix.ResultAdjMatrixC[i + Config_matrix.M * Config_matrix.Piececount,
+                        j + Config_matrix.M * Config_matrix.Piececount] = Config_matrix.AdjMatrixC[i, j];
                 }
             }
 
@@ -152,6 +157,7 @@ namespace Course_Work__WF_Block_Layout_
                         Config_matrix.AdjMatrixC[i, j] = savearr[i, j];
                     }
                 
+
                 for (int i = 0; i < Config_matrix.M; i++)
                 {
                     if (i != Config_matrix.M - 1)
@@ -159,7 +165,7 @@ namespace Course_Work__WF_Block_Layout_
                     else
                         result_table[0, Config_matrix.Piececount].Value += Config_matrix.VertexShape[i + Config_matrix.M * Config_matrix.Piececount];
                 }
-                
+
 
                 Config_matrix.Piececount++;
 
@@ -173,20 +179,6 @@ namespace Course_Work__WF_Block_Layout_
                 }
                 local_degree_show();
                 connectivity_show();
-
-                /*string ver = "";
-                if (Config_matrix.Piececount == 1)
-                {
-                    for (int i = 0; i < Config_matrix.M; i++)
-                    {
-                        if (i != 2)
-                            ver += Config_matrix.VertexShape[i] + "; ";
-                        else
-                            ver += Config_matrix.VertexShape[i];
-                    }
-                    label_g1.Text = "{" + ver + "}";
-                    label_g1.Visible = true;
-                }*/
             }
         }
 
@@ -210,6 +202,10 @@ namespace Course_Work__WF_Block_Layout_
             {
                 Config_matrix.AdjMatrixC[adj_matrix_data_grid.CurrentCell.RowIndex,
                     adj_matrix_data_grid.CurrentCell.ColumnIndex] = int.Parse(adj_matrix_data_grid.CurrentCell.Value.ToString());
+
+                Config_matrix.ResultAdjMatrixC[adj_matrix_data_grid.CurrentCell.RowIndex,
+                    adj_matrix_data_grid.CurrentCell.ColumnIndex] = int.Parse(adj_matrix_data_grid.CurrentCell.Value.ToString());
+
                 local_degree_show();
 
             }
@@ -218,13 +214,16 @@ namespace Course_Work__WF_Block_Layout_
                 adj_matrix_data_grid.CurrentCell.Value = 0;
                 Config_matrix.AdjMatrixC[adj_matrix_data_grid.CurrentCell.RowIndex,
                     adj_matrix_data_grid.CurrentCell.ColumnIndex] = int.Parse(adj_matrix_data_grid.CurrentCell.Value.ToString());
+
+                Config_matrix.ResultAdjMatrixC[adj_matrix_data_grid.CurrentCell.RowIndex,
+                    adj_matrix_data_grid.CurrentCell.ColumnIndex] = int.Parse(adj_matrix_data_grid.CurrentCell.Value.ToString());
             }
             connectivity_show();
         }
 
-        private void result_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btn_open_result_Click(object sender, EventArgs e)
         {
-
+            new Form2().Show();
         }
     }
 }

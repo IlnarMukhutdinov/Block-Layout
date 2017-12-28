@@ -149,7 +149,6 @@ namespace Course_Work__WF_Block_Layout_
                 string saveshape = Config_matrix.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M];
                 Config_matrix.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M] = Config_matrix.VertexShape[jsave + Config_matrix.M + Config_matrix.Piececount * Config_matrix.M];
                 Config_matrix.VertexShape[jsave + Config_matrix.M + Config_matrix.Piececount * Config_matrix.M] = saveshape;
-
                 return new SwapResult(true, isave, jsave);
             }
             return new SwapResult(false, 0, 0);

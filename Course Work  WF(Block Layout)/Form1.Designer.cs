@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.main_container = new System.Windows.Forms.SplitContainer();
+            this.btn_open_result = new System.Windows.Forms.Button();
             this.btn_simmetry = new System.Windows.Forms.Button();
             this.btn_start_algorithm = new System.Windows.Forms.Button();
             this.btn_aplly_changes = new System.Windows.Forms.Button();
@@ -60,6 +61,7 @@
             // main_container.Panel1
             // 
             this.main_container.Panel1.BackColor = System.Drawing.Color.White;
+            this.main_container.Panel1.Controls.Add(this.btn_open_result);
             this.main_container.Panel1.Controls.Add(this.btn_simmetry);
             this.main_container.Panel1.Controls.Add(this.btn_start_algorithm);
             this.main_container.Panel1.Controls.Add(this.btn_aplly_changes);
@@ -76,6 +78,13 @@
             this.main_container.Panel2.Controls.Add(this.result_table);
             this.main_container.Panel2.Controls.Add(this.adj_matrix_data_grid);
             resources.ApplyResources(this.main_container.Panel2, "main_container.Panel2");
+            // 
+            // btn_open_result
+            // 
+            resources.ApplyResources(this.btn_open_result, "btn_open_result");
+            this.btn_open_result.Name = "btn_open_result";
+            this.btn_open_result.UseVisualStyleBackColor = true;
+            this.btn_open_result.Click += new System.EventHandler(this.btn_open_result_Click);
             // 
             // btn_simmetry
             // 
@@ -134,7 +143,6 @@
             this.result_table.BackgroundColor = System.Drawing.Color.White;
             this.result_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.result_table.Name = "result_table";
-            this.result_table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.result_table_CellContentClick);
             // 
             // adj_matrix_data_grid
             // 
@@ -177,6 +185,7 @@
         private System.Windows.Forms.Button btn_start_algorithm;
         private System.Windows.Forms.Button btn_simmetry;
         private System.Windows.Forms.DataGridView result_table;
+        private System.Windows.Forms.Button btn_open_result;
     }
 }
 

@@ -1,19 +1,15 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Graph_placement_algorithm
 {
-    /// <summary>
-    ///     <param name="n">Количество вершин в исходном графе G</param>
-    ///     <param name="m">Количество заданных веришин в подграфах</param>
-    ///     <param name="adjMatrixC">Исходная матрица смежности (индексация с нуля)</param>
-    ///     <param name="localDegree">Массив локальных степеней матрицы смежности (индексация с нуля)</param>
-    /// </summary>
-    class Config_matrix
+   class Config_matrix
     {
         private static int[,] adjMatrixC1, adjMatrixC2;
 
-
         public int index1 = 0, index2 = 0;
+
+        public static int[,] ResultAdjMatrixC { get; set; }
 
         public static int[,] AdjMatrixC { get; set; }
 
@@ -24,6 +20,8 @@ namespace Graph_placement_algorithm
         public static int L { get; set; }
 
         public static int Piececount { get; set; }
+
+        public static int InitialN { get; set; }
 
         public static int N { get; set; }
 
@@ -40,6 +38,19 @@ namespace Graph_placement_algorithm
                     AdjMatrixC[i, j] = 0;
                 }
                 VertexShape[i] = "x" + (i + 1);
+            }
+        }
+
+        public static void ResultMatrixCreate()
+        {
+            InitialN = N;
+            ResultAdjMatrixC = new int[InitialN, InitialN];
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                   ResultAdjMatrixC[i, j] = 0;
+                }
             }
         }
 
