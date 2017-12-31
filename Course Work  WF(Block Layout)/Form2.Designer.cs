@@ -1,6 +1,6 @@
 ﻿namespace Course_Work__WF_Block_Layout_
 {
-    partial class Form2
+    partial class ResultWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -41,13 +41,13 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // Form2
+            // ResultWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.pictureBox);
-            this.Name = "Form2";
+            this.Name = "ResultWindow";
             this.Text = "Результат";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

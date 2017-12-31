@@ -1,6 +1,6 @@
 ﻿namespace Course_Work__WF_Block_Layout_
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.main_container = new System.Windows.Forms.SplitContainer();
             this.btn_open_result = new System.Windows.Forms.Button();
             this.btn_simmetry = new System.Windows.Forms.Button();
@@ -153,13 +153,13 @@
             this.adj_matrix_data_grid.Name = "adj_matrix_data_grid";
             this.adj_matrix_data_grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellEndEdit);
             // 
-            // Form1
+            // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.main_container);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.main_container.Panel1.ResumeLayout(false);
             this.main_container.Panel1.PerformLayout();
             this.main_container.Panel2.ResumeLayout(false);

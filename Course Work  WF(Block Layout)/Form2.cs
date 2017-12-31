@@ -5,9 +5,9 @@ using Graph_placement_algorithm;
 
 namespace Course_Work__WF_Block_Layout_
 {
-    public partial class Form2 : Form
+    public partial class ResultWindow : Form
     {
-        public Form2()
+        public ResultWindow()
         {
             InitializeComponent();
             DrawResult();
