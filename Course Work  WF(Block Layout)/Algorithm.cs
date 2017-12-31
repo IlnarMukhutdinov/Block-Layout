@@ -183,6 +183,6 @@ namespace Course_Work__WF_Block_Layout_
                         Config_matrix.AdjMatrixC[i, j] = savearr[i, j];
                     }
             }
-        }
+        }        
     }
 }

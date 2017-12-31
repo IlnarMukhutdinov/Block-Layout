@@ -111,6 +111,8 @@ namespace Course_Work__WF_Block_Layout_
                     else
                         result_table[0, Config_matrix.Piececount].Value += Config_matrix.VertexShape[i + Config_matrix.M * Config_matrix.Piececount];
                 }
+                Config_matrix.InternalLinksInResultMatrixCount();
+                Config_matrix.ExternalLinksInResultMatrixCount();
                 btn_start_algorithm.Enabled = false;
                 btn_open_result.Enabled = true;
                 return;

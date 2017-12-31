@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Graph_placement_algorithm
 {
-   class Config_matrix
+    class Config_matrix
     {
         private static int[,] adjMatrixC1, adjMatrixC2;
 
@@ -11,9 +11,15 @@ namespace Graph_placement_algorithm
 
         public static int[,] ResultAdjMatrixC { get; set; }
 
+        public static int[] InternalLinksInResultMatrix { get; set; }
+
+        public static int[] ExternalLinksInResultMatrix { get; set; }
+
         public static int[,] AdjMatrixC { get; set; }
 
         public static int[] LocalDegree { get; set; }
+
+        public static int[] LocalDegreeInResultMatrix { get; set; }
 
         public static string[] VertexShape { get; set; }
 
@@ -49,7 +55,7 @@ namespace Graph_placement_algorithm
             {
                 for (int j = 0; j < N; j++)
                 {
-                   ResultAdjMatrixC[i, j] = 0;
+                    ResultAdjMatrixC[i, j] = 0;
                 }
             }
         }
@@ -63,6 +69,97 @@ namespace Graph_placement_algorithm
                     LocalDegree[i] += AdjMatrixC[i, j];
         }
 
+        public static void InternalLinksInResultMatrixCount()
+        {
+            InternalLinksInResultMatrix = new int[L];
+            int pieceCount = 0;
+            for (int i = 0; i < L; i++)
+            {
+                for (int j = 0; j < M; j++)
+                {
+                    for (int k = j + 1; k < M; k++)
+                    {
+                        InternalLinksInResultMatrix[i] = InternalLinksInResultMatrix[i] + ResultAdjMatrixC[j + M * pieceCount, k + M * pieceCount];
+                    }
+                }
+                pieceCount++;
+            }
+        }
+
+        public static void ExternalLinksInResultMatrixCount()
+        {
+            ExternalLinksInResultMatrix = new int[(L * (L - 1)) / 2];
+            int pieceCount = 0;
+            switch (L)
+            {
+                case 2:
+                    for (int i = 0; i < M; i++)
+                    {
+                        for (int j = 0; j < M; j++)
+                        {
+                            ExternalLinksInResultMatrix[0] +=
+                                ResultAdjMatrixC[j + M * pieceCount, j + M * (pieceCount + 1)];
+                        }
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < ExternalLinksInResultMatrix.Length - 1; i++)
+                    {
+                        for (int j = 0; j < M; j++)
+                        {
+                            for (int k = 0; k < M; k++)
+                            {
+                                ExternalLinksInResultMatrix[i] +=
+                                    ResultAdjMatrixC[j + M * pieceCount, k + M * (pieceCount + 1)];
+                            }
+                        }
+                        pieceCount++;
+                    }
+                    for (int i = 0; i < M; i++)
+                    {
+                        for (int j = 0; j < M; j++)
+                        {
+                            ExternalLinksInResultMatrix[2] += ResultAdjMatrixC[i, j + M * 2];
+                        }
+                    }
+                    break;
+                case 4:
+                    pieceCount = 0;
+                    for (int i = 0; i < ExternalLinksInResultMatrix.Length - 3; i++)
+                    {
+                        for (int j = 0; j < M; j++)
+                        {
+                            for (int k = 0; k < M; k++)
+                            {
+                                ExternalLinksInResultMatrix[i] +=
+                                    ResultAdjMatrixC[j + M * pieceCount, k + M * (pieceCount + 1)];
+                            }
+                        }
+                        pieceCount++;
+                    }
+                    pieceCount = 2;
+                    for (int i = 3; i < ExternalLinksInResultMatrix.Length - 1; i++)
+                    {
+                        for (int j = 0; j < M; j++)
+                        {
+                            for (int k = 0; k < M; k++)
+                            {
+                                ExternalLinksInResultMatrix[i] += ResultAdjMatrixC[j, k + M * pieceCount];
+                            }
+                        }
+                        pieceCount++;
+                    }
+                    for (int i = 0; i < M; i++)
+                    {
+                        for (int j = 0; j < M; j++)
+                        {
+                            ExternalLinksInResultMatrix[5] += ResultAdjMatrixC[i + M, j + 3 * M];
+                        }
+                    }
+                    break;
+            }
+        }
+        
         public void C1C2Create()
         {
             int i = index1, j = index1;
@@ -134,4 +231,5 @@ namespace Graph_placement_algorithm
                 Console.Write(LocalDegree[i] + " ");
         }
     }
+    
 }
