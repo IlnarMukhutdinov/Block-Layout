@@ -145,6 +145,23 @@ namespace Course_Work__WF_Block_Layout_
                     Config_matrix.AdjMatrixC[k, jsave + Config_matrix.M] = savevalue;
                     k++;
                 }
+                for (int j = 0, k = 0; j < Config_matrix.InitialN; j++)
+                {
+                    int savevalue = Config_matrix.ResultAdjMatrixC[isave + Config_matrix.M * Config_matrix.Piececount,
+                        j];
+
+                    Config_matrix.ResultAdjMatrixC[isave + Config_matrix.M * Config_matrix.Piececount, j] =
+                        Config_matrix.ResultAdjMatrixC[jsave + Config_matrix.M * Config_matrix.Piececount + Config_matrix.M, k];
+
+                    Config_matrix.ResultAdjMatrixC[jsave + Config_matrix.M * Config_matrix.Piececount + Config_matrix.M, k] = savevalue;
+
+                    Config_matrix.ResultAdjMatrixC[j, isave + Config_matrix.M * Config_matrix.Piececount] =
+                        Config_matrix.ResultAdjMatrixC[k, jsave + Config_matrix.M * Config_matrix.Piececount + Config_matrix.M];
+
+                    Config_matrix.ResultAdjMatrixC[k, jsave + Config_matrix.M * Config_matrix.Piececount + Config_matrix.M] = savevalue;
+
+                    k++;
+                }
 
                 string saveshape = Config_matrix.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M];
                 Config_matrix.VertexShape[isave + Config_matrix.Piececount * Config_matrix.M] = Config_matrix.VertexShape[jsave + Config_matrix.M + Config_matrix.Piececount * Config_matrix.M];

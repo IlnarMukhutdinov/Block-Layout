@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.result_table = new System.Windows.Forms.DataGridView();
             this.adj_matrix_data_grid = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.main_container)).BeginInit();
             this.main_container.Panel1.SuspendLayout();
             this.main_container.Panel2.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // main_container.Panel2
             // 
+            this.main_container.Panel2.Controls.Add(this.label4);
             this.main_container.Panel2.Controls.Add(this.result_table);
             this.main_container.Panel2.Controls.Add(this.adj_matrix_data_grid);
             resources.ApplyResources(this.main_container.Panel2, "main_container.Panel2");
@@ -153,6 +155,11 @@
             this.adj_matrix_data_grid.Name = "adj_matrix_data_grid";
             this.adj_matrix_data_grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adj_matrix_data_grid_CellEndEdit);
             // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -163,6 +170,7 @@
             this.main_container.Panel1.ResumeLayout(false);
             this.main_container.Panel1.PerformLayout();
             this.main_container.Panel2.ResumeLayout(false);
+            this.main_container.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.main_container)).EndInit();
             this.main_container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.result_table)).EndInit();
@@ -186,6 +194,7 @@
         private System.Windows.Forms.Button btn_simmetry;
         private System.Windows.Forms.DataGridView result_table;
         private System.Windows.Forms.Button btn_open_result;
+        private System.Windows.Forms.Label label4;
     }
 }
 

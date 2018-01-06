@@ -46,13 +46,17 @@ namespace Course_Work__WF_Block_Layout_
                 adj_matrix_data_grid.Rows[i].HeaderCell.Value = Config_matrix.VertexShape[i + Config_matrix.Piececount * Config_matrix.M];
             }
 
-            adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 2].Name = "r";
+            adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 2].Name = "ρ(xi)";
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 2].ReadOnly = true;
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 2].Width = 40;
 
-            adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].Name = "a";
+            adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].Name = "δ(xj)";
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].Width = 40;
             adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount - 1].ReadOnly = true;
+
+            //adj_matrix_data_grid.Columns[adj_matrix_data_grid.ColumnCount].Name = "∆δ(xν,xμ)";
+            
+
 
             for (int i = 0; i < Config_matrix.N; i++)
             {
@@ -129,8 +133,8 @@ namespace Course_Work__WF_Block_Layout_
                 {
                     adj_matrix_data_grid[j, i].Value = Config_matrix.AdjMatrixC[i, j];
 
-                    Config_matrix.ResultAdjMatrixC[i + Config_matrix.M * Config_matrix.Piececount,
-                        j + Config_matrix.M * Config_matrix.Piececount] = Config_matrix.AdjMatrixC[i, j];
+                    //Config_matrix.ResultAdjMatrixC[i + Config_matrix.M * Config_matrix.Piececount,
+                    //    j + Config_matrix.M * Config_matrix.Piececount] = Config_matrix.AdjMatrixC[i, j];
                 }
             }
 
@@ -141,6 +145,9 @@ namespace Course_Work__WF_Block_Layout_
             adj_matrix_data_grid.Rows[SwapResult.I].HeaderCell.Value = adj_matrix_data_grid.Rows[SwapResult.J + Config_matrix.M].HeaderCell.Value;
             adj_matrix_data_grid.Rows[SwapResult.J + Config_matrix.M].HeaderCell.Value = save;
 
+            local_degree_show();
+            connectivity_show();
+
             if (!SwapResult.Flag)
             {
                 int[,] savearr = new int[Config_matrix.N - Config_matrix.M, Config_matrix.N - Config_matrix.M];
@@ -149,6 +156,15 @@ namespace Course_Work__WF_Block_Layout_
                     {
                         savearr[i - Config_matrix.M, j - Config_matrix.M] = Config_matrix.AdjMatrixC[i, j];
                     }
+
+                for (int i = 0; i < Config_matrix.N; i++)
+                {
+                    for (int j = 0; j < Config_matrix.N; j++)
+                    {
+                        Config_matrix.ResultAdjMatrixC[i + Config_matrix.M * Config_matrix.Piececount,
+                            j + Config_matrix.M * Config_matrix.Piececount] = Config_matrix.AdjMatrixC[i, j];
+                    }
+                }
 
                 Config_matrix.N -= Config_matrix.M;
                 Config_matrix.AdjMatrixC = new int[Config_matrix.N, Config_matrix.N];
