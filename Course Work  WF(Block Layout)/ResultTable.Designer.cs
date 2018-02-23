@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.Esum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,21 +42,33 @@
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
+            // Esum
+            // 
+            this.Esum.AutoSize = true;
+            this.Esum.Location = new System.Drawing.Point(58, 55);
+            this.Esum.Name = "Esum";
+            this.Esum.Size = new System.Drawing.Size(47, 13);
+            this.Esum.TabIndex = 1;
+            this.Esum.Text = "Eобщ = ";
+            // 
             // ResultWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.Esum);
             this.Controls.Add(this.pictureBox);
             this.Name = "ResultWindow";
             this.Text = "Результат";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Label Esum;
     }
 }
